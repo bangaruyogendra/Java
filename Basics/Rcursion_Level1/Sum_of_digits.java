@@ -12,6 +12,8 @@ public class Sum_of_digits {
         int res = sum_of_digits(n);
         System.out.println(res);
     }
+    //product of sum if (n%10==n) return n nextline return (n%10)*sum(n/10)
+
     static int sum_of_digits(int n){
         if (n == 0) {
             return 0;
