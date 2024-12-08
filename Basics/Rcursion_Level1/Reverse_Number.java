@@ -7,16 +7,20 @@ public class Reverse_Number {
         //Reverse the Number
         Scanner sc =new Scanner(System.in);
         int res =rev2(sc.nextInt());
+        rev(sc.nextInt());
         System.out.println(res);
+        //palidram 
+        pali(sc.nextInt());
     }
-    // static void rev(int n){
-    //     if (n==0){
-    //         return;
-    //     }
-    //     int rem = n%10;
-    //     sum = sum*10+rem;
-    //     rev(n/10);
-    // }
+    static int sum=0;
+    static void rev(int n){
+        if (n==0){
+            return;
+        }
+        int rem = n%10;
+        sum = sum*10+rem;
+        rev(n/10);
+    }
     static int rev2(int n){
        int digits = (int)(Math.log10(n))+1;
        return helper(n,digits);
@@ -27,5 +31,10 @@ public class Reverse_Number {
         }
         int rem = n%10;
         return (int) (rem * Math.pow(10, digits-1)+helper(n/10, digits-1));
+    }
+    static boolean pali(int n){
+        
+            return (sum == rev2(n));
+        
     }
 }
