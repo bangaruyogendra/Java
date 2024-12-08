@@ -7,12 +7,20 @@ public class find_target_in_array {
     public static void main(String[] args) {
         int arr[] ={1,2,3,4,4,5,9,8};
         int target = 4;
+        System.out.println("this is for index_of_target_element");
         int res = index_of_target_elment(arr,target,0);
         System.out.println(res);
+        System.out.println("this is for findallindex");
         findallIndex(arr,target,0);
         System.out.println(list);
-    }
-    static int index_of_target_elment(int[] arr,int target,int index){
+        ArrayList<Integer> otherMethods = findallIndex_OtherMethod(arr,target,0);
+        System.out.println("this is for othermethods");
+        System.out.println(otherMethods);
+
+        }
+
+
+        static int index_of_target_elment(int[] arr,int target,int index){
           int ans = -1;
           if(index == arr.length){
               return ans;
@@ -33,5 +41,18 @@ public class find_target_in_array {
         }
         findallIndex(arr,target,index+1);
     }
+    static ArrayList<Integer> findallIndex_OtherMethod(int[] arr, int target, int index) {
+        ArrayList<Integer> list =new ArrayList<>();
+        if (index == arr.length){
+            return list;
+        }
+        if (arr[index]==target){
+            list.add(index);
+        }
+        ArrayList<Integer> allmyBelowAnswers = findallIndex_OtherMethod(arr, target, index+1);
+        list.addAll(allmyBelowAnswers);
+        return list;
+    }
+
 
 }
