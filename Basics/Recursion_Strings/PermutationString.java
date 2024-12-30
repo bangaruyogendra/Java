@@ -12,6 +12,7 @@ public class PermutationString {
         permutate("",name);
         ArrayList<String> ans = permutateList(" ", name);
         System.out.println(ans);
+        sc.close();
     
     }
     static void permutate(String p,String up){
