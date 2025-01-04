@@ -22,7 +22,11 @@ public class PrivateClass_Main {
         OuterClass outerClassobj = new OuterClass();
         outerClassobj.display();
         //4)Encapsulation with private is completed
-        
+        StudentClass studentClassobj = new StudentClass(10, 12, 123456);
+        //write sout to print on screen
+        studentClassobj.Account();
+        studentClassobj.Id();
+        studentClassobj.Reg();
 
         
     }

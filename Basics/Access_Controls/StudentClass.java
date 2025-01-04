@@ -27,5 +27,14 @@ public class StudentClass {
     public long setAccountNumber(long account_number){
         return this.account_number=account_number;
     }
+    public int Id(){
+        return getId();
+    }
+    public int Reg(){
+        return getReg();
+    }
+    public long Account(){
+        return get_Account_Number();
+    }
 
 }
