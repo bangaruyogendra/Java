@@ -1,9 +1,9 @@
 package Basics.Oops.Basics_Oops.Generic_ArrayList_Concept;
 
-public class Custome_ArrayList {
+public class Custome_ArrayList  {
     private int arr[];
-    private int data = -1;
-    private int Default = 5;
+    private int data = 0;
+    private static int Default = 5;
     
     public Custome_ArrayList(){
        
@@ -11,20 +11,37 @@ public class Custome_ArrayList {
     }
     public void add(int num){
         if (isFull()){
-           this.arr = new int[Default*2];
+           resize();
         }
-        arr[++data] = num;
+        arr[data++] = num;
+    }
+    public int remove(){
+        if(data ==0){
+            System.out.println("ArrayList is Empty");
+        }
+        return arr[--data];
+
     }
     public boolean isFull(){
-        if (data == Default){
+        if (arr.length == Default){
             return true;
         }
         return false;
     }
     public void display(){
-        for(int e=0;e<arr.length;e++){
+        for(int e=0;e<data;e++){
            System.out.println(arr[e]);
         }
+    }
+    public void resize(){
+        int temp[] = new int[arr.length*2];
+        for(int i=0;i<arr.length;i++){
+            temp[i]=arr[i];
+        }
+        arr = temp;
+    }
+    public void set(int index,int value){
+        arr[index]=value;
     }
     public static void main(String[] args) {
         Custome_ArrayList arrObj = new Custome_ArrayList();
@@ -34,6 +51,12 @@ public class Custome_ArrayList {
         arrObj.add(5);
         arrObj.add(6);
         arrObj.add(7);
+        arrObj.display();
+        arrObj.remove();
+        System.out.println("Custome ArrayList after removing");
+        arrObj.display();
+        System.out.println("Modifying an array");
+        arrObj.set(0, 5);
         arrObj.display();
 
     }
