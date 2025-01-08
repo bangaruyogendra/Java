@@ -50,6 +50,12 @@ public class GenericCustome_ArrayList<T> {
         Custome.set(0,"Balu Yogendra");
         System.out.println("Modifying the Array");
         Custome.display();
+        GenericCustome_ArrayList<Integer> numbers = new GenericCustome_ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.display();
         //public class GenericMethodExample {
     // Generic method
 //     public static <T> void display(T element) {
