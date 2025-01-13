@@ -36,7 +36,7 @@ public class GenericCustome_ArrayList<T> {
     }
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-        GenericCustome_ArrayList Custome = new GenericCustome_ArrayList<>();
+        GenericCustome_ArrayList<String> Custome = new GenericCustome_ArrayList<>();
         Custome.add("Balu");
         Custome.add("Yogi");
         Custome.add("Balu");
