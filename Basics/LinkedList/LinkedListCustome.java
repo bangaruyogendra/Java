@@ -66,6 +66,46 @@ public class LinkedListCustome {
         this.size+=1;
 
     }
+    public void deleteFirst(){
+        if (head == null){
+            System.out.println("Linked list is Empty");
+            return;
+        }
+        head = head.next;
+    }
+    public void deleteLast(){
+        //Node temp = head;
+        // while(temp.next.next!=null){
+        //     temp =temp.next;
+        // }
+        // temp.next=null;
+        Node secNode = getNode(size-1);
+        secNode.next = null;
+        this.size-=1;
+    }
+    public void deleteMiddle(int index){
+       if(index == 0){
+        deleteFirst();
+        return;
+       }
+       if(index == size){
+        deleteLast();
+        return;
+       }
+       Node temp = head;
+       for(int e =1;e<index-1;e++){
+        temp = temp.next;
+       }
+       temp.next = temp.next.next;
+       this.size-=1;
+    }
+    public Node getNode(int index){
+        Node temp =head;
+        for(int e =1;e<index-1;e++){
+            temp =temp.next;
+        }
+        return temp;
+    }
     public static void main(String[] args) {
         LinkedListCustome list= new LinkedListCustome();
         list.insertFirst(10);
@@ -77,6 +117,12 @@ public class LinkedListCustome {
         list.insertLast(50);
         list.display();
         list.insert(3,60);
+        list.display();
+        list.deleteFirst();
+        list.display();
+        list.deleteLast();
+        list.display();
+        list.deleteMiddle(2);
         list.display();
 
     }
